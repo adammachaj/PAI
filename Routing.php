@@ -1,5 +1,6 @@
 <?php
 
+require_once 'Controllers//MainPageController.php';
 require_once 'Controllers//SecurityController.php';
 
 class Routing {
@@ -15,6 +16,10 @@ class Routing {
             'logout' => [
                 'controller' => 'SecurityController',
                 'action' => 'logout'
+            ],
+            'main_page' => [
+                'controller' => 'MainPageController',
+                'action' => 'show'
             ]
         ];
     }
@@ -31,4 +36,5 @@ class Routing {
             $object->$action();
         }
     }
+
 }

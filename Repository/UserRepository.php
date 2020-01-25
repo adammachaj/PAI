@@ -10,27 +10,43 @@ class UserRepository extends Repository {
     public function getUser(string $email): ?User 
     {
 
-        // die(var_dump($this->database->connect()));
+        $pdo = $this->database->connect();
 
-        $stmt = $this->database->connect()->prepare('
-            SELECT * FROM user WHERE email = :email
-        ');
-        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
-        $stmt->execute();
+        try{
+                // die(var_dump($this->database->connect()));
+                
+                $pdo->beginTransaction();
 
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+                $stmt = $pdo->prepare('
+                    SELECT * FROM user WHERE email = :email
+                ');
+                $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+                $stmt->execute();
 
-        if($user == false) {
-            return null;
+                $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                if($user == false) {
+                    return null;
+                }
+
+                $pdo->commit();
+
+                return new User(
+                    $user['email'],
+                    $user['password'],
+                    $user['nickname'],
+                    $user['User_ID'],
+                    $this->getRole($user['Role_ID'])
+                );
+            }
+
+        //tranzakcje
+        
+        catch(Exception $e){
+
+            $pdo->rollback();
+
         }
-
-        return new User(
-            $user['email'],
-            $user['password'],
-            $user['nickname'],
-            $user['user_id'],
-            $this->getRole($user['Role_ID'])
-        );
     }
 
     public function getUsers(): array {

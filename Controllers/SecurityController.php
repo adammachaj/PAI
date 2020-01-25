@@ -13,7 +13,7 @@ class SecurityController extends AppController {
             $user = $repo->getUser($email);
             $password = $_POST['password'];
             
-            die(var_dump($user));
+            // die(var_dump($user));
 
             if ($user->getEmail() !== $email) {
                 $this->render('login', ['messages' => ['User with this email not exist!']]);
@@ -29,7 +29,7 @@ class SecurityController extends AppController {
             $_SESSION["role"] = $user->getRole();
 
             $url = "http://$_SERVER[HTTP_HOST]/";
-            header("Location: {$url}?page=board");
+            header("Location: {$url}?page=main_page");
             return;
         }
 
