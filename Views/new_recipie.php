@@ -43,11 +43,9 @@
 
       <div>
           <div class = "row">
-
+            
             <p class="recipie_header" style="margin: 0em ; margin-left: 1em; margin-right: 1em; width: 3em;">Recipie</p>
-            <button style="width: 10em; background: transparent; margin-right: 0em; margin-left: 4em;">
-            <img src="../Public/demo/profile.svg" alt="">
-            </button>
+
 
 
           </div>
@@ -60,17 +58,22 @@
       <div>
 
 
-        <div class = "row">
 
-          <button style="width: 7em; height: 7em; background: transparent; margin-right: 0em; margin-left: 3em;">
-            <img src="../Public/demo/empty_star.svg", style="margin-left: 0em">
+          
+          <button style="width: 10; height: 2; background: transparent;">
+            <img src="../Public/demo/Group 29.svg">
           </button>
-
-          
-          <img src="../Public/demo/fancy_spaghetti.jpg" style="margin-left: 1em; border-radius: 1em; width: 25em">
           
 
-        </div>
+          <div class="row">
+
+            <p class="nickname" style="font-size: 3em; margin-top: 1.5em; margin-left: 3em;">Add new recipie</p>
+            
+            <button style="width: 1; height: 1; background: transparent; margin-top: 3em;">
+              <img src="../Public/demo/+.svg">
+            </button>
+
+          </div>
 
 
         <!-- <p class="recipie_description"></p> -->

@@ -133,7 +133,7 @@ form {
   height: 6em;
   letter-spacing: normal;
   text-align: center;
-  background-color: green;
+  background-color: transparent;
   color: #ffffff;
   margin-left: 2em;
 }
@@ -143,7 +143,7 @@ form {
   height: 6em;
   letter-spacing: normal;
   text-align: center;
-  background-color: rgb(179, 169, 83);
+  background-color: transparent;
   color: #ffffff;
   margin-left: 2em;
 }
@@ -153,7 +153,7 @@ form {
   height: 6em;
   letter-spacing: normal;
   text-align: center;
-  background-color: rgb(189, 139, 65);
+  background-color: transparent;
   color: #ffffff;
   margin-left: 2em;
 }
@@ -182,6 +182,16 @@ form {
   display: flex;
 }
 
+.recipie_grid{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  margin-top: 3em;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+
 /* Create two equal columns that sits next to each other */
 .column {
   flex: 50%;
@@ -194,16 +204,24 @@ form {
   margin-left: 1em;
   text-align: left;
   font-style: georgia;
-  font-size: 5em;
+  font-size: 4em;
   margin-top: 0em;
-  margin-left: 2em;
+  color: #050087;
 }
 
 .recipie_description{
     background-color: transparent;
-    width: 65em;
-    height: 30em;
+    width: 50em;
+    height: 25em;
     overflow: scroll;
+}
+
+.recipie_picture{
+  margin-left: 1em; 
+  border-radius: 1em; 
+  width: 25em;
+  height: 15em;
+
 }
 
 /* profile */

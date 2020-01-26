@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="746" height="414" viewBox="0 0 746 414">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="55" height="55" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_29" data-name="Group 29" transform="translate(-1095 -513)">
+    <g id="Group_30" data-name="Group 30">
+      <rect id="Rectangle_1462" data-name="Rectangle 1462" width="746" height="414" rx="30" transform="translate(1095 513)" fill="#bce0fd"/>
+      <g id="_" data-name="+" transform="translate(1696 779)">
+        <g id="Group_28" data-name="Group 28">
+          <g id="Ellipse_226" data-name="Ellipse 226" fill="#2699fb" stroke="#95989a" stroke-linejoin="round" stroke-width="2" stroke-dasharray="0 2">
+            <circle cx="53.5" cy="53.5" r="53.5" stroke="none"/>
+            <circle cx="53.5" cy="53.5" r="52.5" fill="none"/>
+          </g>
+          <g id="Group_27" data-name="Group 27">
+            <g id="_2" data-name="+" transform="translate(26 26)" clip-path="url(#clip-path)">
+              <path id="Union_1" data-name="Union 1" d="M24.063,55V30.938H0V24.062H24.063V0h6.877V24.062H55v6.875H30.939V55Z" fill="#fff" stroke="#95989a" stroke-linejoin="round" stroke-width="2" stroke-dasharray="0 2"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
