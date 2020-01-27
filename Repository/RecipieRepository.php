@@ -15,7 +15,7 @@ class RecipieRepository extends Repository {
             $stmt = $pdo->prepare('
                 SELECT * FROM recipie WHERE Recipie_ID = :id
             ');
-            $stmt->bindParam(':Recipie_ID', $id, PDO::PARAM_STR);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
             $stmt->execute();
 
             $recipie = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -26,10 +26,10 @@ class RecipieRepository extends Repository {
 
             return new Recipie(
                 $recipie['Recipie_ID'],
-                $recipie['description'],
                 $recipie['image'],
                 $recipie['favourites'],
-                $recipie['name']
+                $recipie['description'],
+                $recipie['recipie_name']
             );
 
 

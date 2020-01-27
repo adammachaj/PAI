@@ -6,7 +6,16 @@ class RecipieController extends AppController{
 
     public function show(){
 
-        $this->render('recipie');
+        $repo = new RecipieRepository();
+
+        if($this->isGet());{
+        
+            
+            $rec = $repo->getRecipie($_GET['id']);           
+
+            $this->render('recipie', ['rec' => $rec]);
+
+        }
 
     }
 

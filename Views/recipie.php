@@ -44,7 +44,8 @@
       <div>
           <div class = "row">
 
-            <p class="recipie_header" style="margin: 0em ; margin-left: 1em; margin-right: 1em; width: 3em;">Recipie</p>
+            <!-- <?= $rec->getName();?> -->
+            <p class="recipie_header" style="margin: 0em ; margin-left: 1em; margin-right: 1em; width: 3em;"><?= $rec->getName();?></p>
             <button style="width: 10em; background: transparent; margin-right: 0em; margin-left: 4em;">
             <img src="../Public/demo/profile.svg" alt="">
             </button>
@@ -53,7 +54,11 @@
           </div>
 
 
-          <p class="recipie_description"></p>
+          <p class="recipie_description">
+            <?=
+              $rec->getDescription();
+            ?>
+          </p>
 
       </div>
 
@@ -66,62 +71,33 @@
             <img src="../Public/demo/empty_star.svg", style="margin-left: 0em">
           </button>
 
-          
-          <img src="../Public/demo/fancy_spaghetti.jpg" style="margin-left: 1em; border-radius: 1em; width: 25em">
+          <img src="../Public/demo/<?=$rec->getImage();?>" style="margin-left: 1em; border-radius: 1em; width: 25em">
           
 
         </div>
 
-
-        <!-- <p class="recipie_description"></p> -->
+    </div>
 
     </div>
 
-
-
-    </div>
-
-
-
-
-    <!-- <div class="row">
-
-      <div class="column" style="column-width: 23em;">
-          <p class="recipie_header">Recipie</p>
-          
-          <button style="width: 10em; background: transparent; margin-left: 15em;">
-            <img src="../Public/demo/profile.svg" alt="">
-          </button>
-          
-
-      </div>
-
-
-      <div class="column">
-          <img src="../Public/demo/fancy_spaghetti.jpg" style="margin-left: 15em;">
-
-      </div>
-
-    </div>
-
-
-    <div class="row">
-
-      <div class="column">
-        <div class="recipie_description" style="margin-left: 3em;">
-        </div>
-      </div>
-
-        <div class="button" style="margin-right: 1em;">
-          <img src="../Public/demo/Group 24.svg">
-        </div>
-
-    </div> -->
-    <!-- <div class="recipie_description" style="margin-left: 3em;">
-      
-    </div> -->
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </body>
 
 </html>
+
+<script>
+
+  function foo(){
+
+    const apiUrl = "http://localhost:8000";
+    $.ajax({
+      url : apiUrl + '/?page=like',
+      dataType : 'json'
+    })
+      .done((res) => {
+
+        });
+    });
+
+</script>

@@ -44,10 +44,11 @@
 
 
     <?php foreach($images as $image): ?>
-
+        <a href='?page=recipie&id=<?=$image['Recipie_ID']?>'>
         <div>
-            <img src=..//Public//demo//<?= $image["image"] ?>>
+            <img src=..//Public//demo//<?= $image["image"] ?> style="width: 16em; margin-bottom:3em">
         </div>
+        </a>
 
         <?php endforeach ?>
 
