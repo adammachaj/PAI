@@ -1,7 +1,7 @@
 <?php
 
 require_once "Repository.php";
-require_once __DIR__.'//..//Models//Repository.php';
+require_once __DIR__.'//..//Models//Recipie.php';
 
 
 class RecipieRepository extends Repository {
@@ -10,12 +10,7 @@ class RecipieRepository extends Repository {
     {
 
         $pdo = $this->database->connect();
-
-
-        try{
-            // die(var_dump($this->database->connect()));
             
-            $pdo->beginTransaction();
 
             $stmt = $pdo->prepare('
                 SELECT * FROM recipie WHERE Recipie_ID = :id
@@ -29,24 +24,50 @@ class RecipieRepository extends Repository {
                 return null;
             }
 
-            $pdo->commit();
-
-            return new User(
+            return new Recipie(
                 $recipie['Recipie_ID'],
-                $recipie['image'],
                 $recipie['description'],
+                $recipie['image'],
                 $recipie['favourites'],
+                $recipie['name']
             );
-        }
 
-        //tranzakcje
 
-        catch(Exception $e){
 
-            $pdo->rollback();
+    }
 
-        }
-}
+    public function getAllImage(){
+
+        $pdo = $this->database->connect();
+
+        $stmt = $pdo->prepare('
+            SELECT Recipie_ID, image FROM recipie
+        ');
+        $stmt->execute();
+
+        $recipie = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $recipie;
+
+    }
+
+    public function save(string $description, string $image, string $name, int $id){
+
+        $pdo = $this->database->connect();
+
+        $stmt = $pdo->prepare('
+            insert into recipie (description, image, User_ID, recipie_name) values(:description, :image, :id,  :name)
+        ');
+
+        $stmt->bindParam(':name', $name, PDO::PARAM_STR);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        $stmt->bindParam(':image', $image, PDO::PARAM_STR);
+        $stmt->bindParam(':description', $description, PDO::PARAM_STR);
+
+        $stmt->execute();
+
+        
+    }
 
 }
 

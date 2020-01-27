@@ -2,17 +2,20 @@
 
 class Recipie{
 
-    private $image;
     private $id;
+    private $image;
     private $description;
     private $favourites;
+    private $name;
 
-    public function __construct(string $image, int $favourites, string $description, int $id)
+    public function __construct(int $id, string $image, int $favourites, string $description, string $name)
     {
+        $this->id = $id;
         $this->image = $image;
-        $this->if = $id;
         $this->favourites = $favourites;
         $this->description = $description;
+        $this->name = $name;
+
     }
 
     public function getImage(): string
@@ -33,6 +36,11 @@ class Recipie{
     public function getDescription(): string
     {
         return $this->description;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
     }
 
 }

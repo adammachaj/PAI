@@ -10,6 +10,7 @@
 
 
   <link rel="stylesheet" href="../Public/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 </head>
 
@@ -44,14 +45,17 @@
       <div>
           <div class = "row">
             
-            <p class="recipie_header" style="margin: 0em ; margin-left: 1em; margin-right: 1em; width: 3em;">Recipie</p>
+
+          <input type="text" id="recipie_name">
+            <!-- <p class="recipie_header" style="margin: 0em ; margin-left: 1em; margin-right: 1em; width: 3em;">Recipie</p> -->
 
 
 
           </div>
 
 
-          <p class="recipie_description"></p>
+          <textarea id="desc" type="text" style="font-size: 3em; width: 10em; height: 8em"></textarea>
+          <!-- <input type="text" style="font-size: 3em;"> -->
 
       </div>
 
@@ -59,25 +63,24 @@
 
 
 
-          
-          <button style="width: 10; height: 2; background: transparent;">
-            <img src="../Public/demo/Group 29.svg">
+   
+          <input type="file" id="pic" accept="image/*"> 
+ 
+          <button style="width: 0em; height: 0em; background: transparent;">
+            <img id="img1" style="width: 12em">
           </button>
-          
 
           <div class="row">
 
             <p class="nickname" style="font-size: 3em; margin-top: 1.5em; margin-left: 3em;">Add new recipie</p>
             
-            <button style="width: 1; height: 1; background: transparent; margin-top: 3em;">
+            <button onclick="send()" style="width: 1; height: 1; background: transparent; margin-top: 3em;">
               <img src="../Public/demo/+.svg">
             </button>
 
           </div>
 
 
-        <!-- <p class="recipie_description"></p> -->
-
     </div>
 
 
@@ -85,46 +88,44 @@
     </div>
 
 
+  <form id="form" action="?page=recipie_upload" method="post">
+  
+  </form>
 
 
-    <!-- <div class="row">
-
-      <div class="column" style="column-width: 23em;">
-          <p class="recipie_header">Recipie</p>
-          
-          <button style="width: 10em; background: transparent; margin-left: 15em;">
-            <img src="../Public/demo/profile.svg" alt="">
-          </button>
-          
-
-      </div>
-
-
-      <div class="column">
-          <img src="../Public/demo/fancy_spaghetti.jpg" style="margin-left: 15em;">
-
-      </div>
-
-    </div>
-
-
-    <div class="row">
-
-      <div class="column">
-        <div class="recipie_description" style="margin-left: 3em;">
-        </div>
-      </div>
-
-        <div class="button" style="margin-right: 1em;">
-          <img src="../Public/demo/Group 24.svg">
-        </div>
-
-    </div> -->
-    <!-- <div class="recipie_description" style="margin-left: 3em;">
-      
-    </div> -->
-    
+  <input value= "<?=$_SESSION['id']?>" type='hidden' id='uID'>
 
 </body>
 
 </html>
+
+<script>
+
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      
+      reader.onload = function(e) {
+        $('#img1').attr('src', e.target.result);
+      }
+      
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+
+  function send() {
+    var desc = $('#desc').val();
+    var image_path = $('#pic').val();
+    var name = $('#recipie_name').val();
+    var id = $('#uID').val();
+
+    $('#form').html("<input name='desc' value='" + desc + "'> <input name='image_path' value='" + image_path + "'> <input name='recipie_name' value='" + name + "'> <input name='id' value='" + id + "'>'");    
+    $('#form').submit();
+  }
+
+  $("#pic").change(function() {
+    readURL(this);
+  });
+
+</script>

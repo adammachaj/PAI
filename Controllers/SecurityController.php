@@ -25,7 +25,7 @@ class SecurityController extends AppController {
                 return;
             }
 
-            $_SESSION["id"] = $user->getEmail();
+            $_SESSION["id"] = $user->getID();
             $_SESSION["role"] = $user->getRole();
 
             $url = "http://$_SERVER[HTTP_HOST]/";

@@ -42,6 +42,17 @@
 
     <div class="main_grid">
 
+
+    <?php foreach($images as $image): ?>
+
+        <div>
+            <img src=..//Public//demo//<?= $image["image"] ?>>
+        </div>
+
+        <?php endforeach ?>
+
+
+<!-- 
         <div>
             <img src="../Public/demo/grid.svg">
         </div>
@@ -53,24 +64,22 @@
         <div>
             <img src="../Public/demo/grid.svg">
         </div>
+
+        <div>
+            <img src="../Public/demo/grid.svg">
+        </div>
+
+        <div>
+            <img src="../Public/demo/grid.svg">
+        </div>
+
+        <div>
+            <img src="../Public/demo/grid.svg">
+        </div> -->
 
     </div>
 
-    <div class="main_grid">
-        
-        <div>
-            <img src="../Public/demo/grid.svg">
-        </div>
 
-        <div>
-            <img src="../Public/demo/grid.svg">
-        </div>
-
-        <div>
-            <img src="../Public/demo/grid.svg">
-        </div>
-
-    </div>
 
 
 </body>

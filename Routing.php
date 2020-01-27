@@ -2,6 +2,9 @@
 
 require_once 'Controllers//MainPageController.php';
 require_once 'Controllers//SecurityController.php';
+require_once 'Controllers//RecipieController.php';
+require_once 'Controllers//NewRecipieController.php';
+
 
 class Routing {
     private $routes = [];
@@ -19,6 +22,21 @@ class Routing {
             ],
             'main_page' => [
                 'controller' => 'MainPageController',
+                'action' => 'show'
+            ],
+            
+            'new_recipie' => [
+                'controller' => 'NewRecipieController',
+                'action' => 'show'
+            ],
+
+            'recipie_upload' => [
+                'controller' => 'NewRecipieController',
+                'action' => 'upload'
+            ],
+            
+            'recipie' => [
+                'controller' => 'RecipieController',
                 'action' => 'show'
             ]
         ];
