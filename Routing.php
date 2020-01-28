@@ -4,6 +4,7 @@ require_once 'Controllers//MainPageController.php';
 require_once 'Controllers//SecurityController.php';
 require_once 'Controllers//RecipieController.php';
 require_once 'Controllers//NewRecipieController.php';
+require_once 'Controllers//ProfileController.php';
 
 
 class Routing {
@@ -38,7 +39,17 @@ class Routing {
             'recipie' => [
                 'controller' => 'RecipieController',
                 'action' => 'show'
-            ]
+            ],
+
+            'profile' => [
+                'controller' => 'ProfileController',
+                'action' => 'show'
+            ],
+
+            'logout' => [
+                'controller' => 'SecurityController',
+                'action' => 'logout'
+            ],
         ];
     }
 

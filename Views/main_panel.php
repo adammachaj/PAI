@@ -17,26 +17,40 @@
 
 <body>
 
+    <?php
+
+        if($_SESSION['role'] != 'admin' && $_SESSION['role'] != 'user'){
+            $url = "http://$_SERVER[HTTP_HOST]/";
+            header("Location: {$url}?page=login");
+        }
+
+    ?>
 
 </div class=".Web">
     
 
     <div class="main_buttons">
+    
 
         <button class="button_discover">
             <p class="discover_text" >DISCOVER</p>
             <img src="../Public/demo/dicover.svg" alt="ERROR IMG">
         </button>
 
-        <button class="button_discover" style="margin-left: 10em; margin-right: 10em;">
-            <p class="discover_text" >DISCOVER</p>
-            <img src="../Public/demo/dicover.svg" alt="ERROR IMG">
+
+        <button class="button_favourite" style="margin-left: 10em; margin-right: 5em;">
+            <p class="discover_text" >FAVOURITE</p>
+            <img src="../Public/demo/star.svg" alt="ERROR IMG">
         </button>
 
-        <button class="button_discover">
-            <p class="discover_text" >DISCOVER</p>
-            <img src="../Public/demo/dicover.svg" alt="ERROR IMG">
+
+        <a href='?page=profile&email=<?=$_SESSION['email']?>'>
+        <button class="button_profile">
+            <p class="discover_text" >Profile</p>
+            <img src="../Public/demo/profile.svg" alt="ERROR IMG">
         </button>
+        </a>
+
 
     </div>
 
@@ -53,32 +67,14 @@
         <?php endforeach ?>
 
 
-<!-- 
-        <div>
-            <img src="../Public/demo/grid.svg">
-        </div>
-
-        <div>
-            <img src="../Public/demo/grid.svg">
-        </div>
-
-        <div>
-            <img src="../Public/demo/grid.svg">
-        </div>
-
-        <div>
-            <img src="../Public/demo/grid.svg">
-        </div>
-
-        <div>
-            <img src="../Public/demo/grid.svg">
-        </div>
-
-        <div>
-            <img src="../Public/demo/grid.svg">
-        </div> -->
-
     </div>
+
+
+    <a href='?page=logout'>
+    <button>
+        <p class = 'nickname'>Logout</p>
+    </button>
+    </a>
 
 
 

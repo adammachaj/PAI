@@ -26,8 +26,8 @@
     
     <div class="login_panel">
             <form class="box" action="?page=login" method='Post'>
-                    <input name="email" type="text" placeholder="email@email.com">
-                    <input name="password" type="password" placeholder="password">
+                    <input name="email" type="text" placeholder="email@email.com" style="background: black">
+                    <input name="password" type="password" placeholder="password" style="background: black">
                     
                     
                     <button type="submit" >CONTINUE</button>

@@ -32,10 +32,12 @@
             <img src="../Public/demo/star.svg" alt="ERROR IMG">
         </button>
 
+            <a href='?page=profile&email=<?=$_SESSION['email']?>'>
         <button class="button_profile">
             <p class="discover_text" >Profile</p>
             <img src="../Public/demo/profile.svg" alt="ERROR IMG">
         </button>
+        </a>
 
     </div>
 

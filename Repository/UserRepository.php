@@ -72,4 +72,21 @@ class UserRepository extends Repository {
         
         return $role['Type'];
     }
+
+    public function save(string $email, string $nickname, string $password, int $roleid){
+
+        $pdo = $this->database->connect();
+
+        $stmt = $pdo->prepare('
+            insert into user (email, nickname, password, Role_ID) values(:email, :nickname, :password, :roleid)
+        ');
+
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->bindParam(':nickname', $nickname, PDO::PARAM_STR);
+        $stmt->bindParam(':password', $password, PDO::PARAM_STR);
+        $stmt->bindParam(':roleid', $roleid, PDO::PARAM_INT);
+        $stmt->execute();
+
+        
+    }
 }

@@ -23,10 +23,12 @@
 
     <div class="main_buttons">
 
-        <button class="button_discover">
-            <p class="discover_text" >Discover</p>
-            <img src="../Public/demo/dicover.svg" alt="ERROR IMG">
-        </button>
+    <a href="?page=main_page">
+            <button class="button_discover" style="margin-right: 20em;">
+                <p class="discover_text" >DISCOVER</p>
+                <img src="../Public/demo/dicover.svg" alt="ERROR IMG">
+            </button>
+            </a>
 
         <button class="button_favourite" style="margin-left: 15em; margin-right: 15em;">
             <p class="discover_text" >Favourite</p>
